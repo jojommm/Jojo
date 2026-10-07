@@ -9,33 +9,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Falling stickers -->
+  <!-- المطر ديال الستيكرز -->
   <div class="falling falling1">🎀</div>
-  <div class="falling falling2">💗</div>
-  <div class="falling falling3">🦇</div>
-  <div class="falling falling4">✨</div>
+  <div class="falling falling2">🦇</div>
+  <div class="falling falling3">🎀</div>
+  <div class="falling falling4">🦇</div>
   <div class="falling falling5">🎀</div>
-  <div class="falling falling6">♡</div>
-  <div class="falling falling7">🦇</div>
-  <div class="falling falling8">💗</div>
-  <div class="falling falling9">✦</div>
-  <div class="falling falling10">🎀</div>
+  <div class="falling falling6">🦇</div>
+  <div class="falling falling7">🎀</div>
+  <div class="falling falling8">🦇</div>
+  <div class="falling falling9">🎀</div>
+  <div class="falling falling10">🦇</div>
 
 
   <!-- الصفحة الأولى -->
+
   <main id="welcome" class="page">
 
     <div class="sticker sticker1">🎀</div>
     <div class="sticker sticker2">🦇</div>
-    <div class="sticker sticker3">💗</div>
-    <div class="sticker sticker4">✨</div>
+    <div class="sticker sticker3">♡</div>
+    <div class="sticker sticker4">✦</div>
 
     <p class="tiny">
       A little surprise for you ♡
@@ -62,7 +66,8 @@
   </main>
 
 
-  <!-- سؤال قبل الهدية -->
+  <!-- صفحة السؤال -->
+
   <section id="questionPage" class="page hidden">
 
     <div class="question-card">
@@ -87,7 +92,6 @@
         Murad, do you love me or not?
       </p>
 
-
       <div class="buttons">
 
         <button id="yesButton" class="yes">
@@ -110,6 +114,7 @@
 
 
   <!-- صفحة الهدية -->
+
   <section id="giftPage" class="page hidden">
 
     <div class="gift-card">
@@ -159,22 +164,22 @@
     let noCount = 0;
 
 
-    /* فتح السؤال */
+    /* فتح صفحة السؤال */
 
-    openGift.addEventListener("click", function() {
+    openGift.addEventListener("click", function () {
 
       welcome.classList.add("hidden");
 
-      setTimeout(function() {
+      setTimeout(function () {
         questionPage.classList.remove("hidden");
       }, 400);
 
     });
 
 
-    /* مقلب زر لا */
+    /* زر لا */
 
-    noButton.addEventListener("click", function() {
+    noButton.addEventListener("click", function () {
 
       noCount++;
 
@@ -207,23 +212,36 @@
 
         noButton.style.position = "fixed";
 
-        const maxX = window.innerWidth - noButton.offsetWidth - 20;
-        const maxY = window.innerHeight - noButton.offsetHeight - 20;
+        const maxX =
+          window.innerWidth -
+          noButton.offsetWidth -
+          20;
 
-        const randomX = Math.max(20, Math.random() * maxX);
-        const randomY = Math.max(20, Math.random() * maxY);
+        const maxY =
+          window.innerHeight -
+          noButton.offsetHeight -
+          20;
 
-        noButton.style.left = randomX + "px";
-        noButton.style.top = randomY + "px";
+        const randomX =
+          Math.max(20, Math.random() * maxX);
+
+        const randomY =
+          Math.max(20, Math.random() * maxY);
+
+        noButton.style.left =
+          randomX + "px";
+
+        noButton.style.top =
+          randomY + "px";
 
       }
 
 
-      /* بعد المرة الثالثة يختفي */
+      /* المرة الثالثة */
 
       else {
 
-        setTimeout(function() {
+        setTimeout(function () {
 
           noButton.style.display = "none";
 
@@ -237,13 +255,13 @@
     });
 
 
-    /* نعم */
+    /* زر إيه */
 
-    yesButton.addEventListener("click", function() {
+    yesButton.addEventListener("click", function () {
 
       questionPage.classList.add("hidden");
 
-      setTimeout(function() {
+      setTimeout(function () {
 
         giftPage.classList.remove("hidden");
 
@@ -252,13 +270,15 @@
     });
 
 
-    /* زر استمرار المفاجأة */
+    /* استمرار المفاجأة */
 
-    document.getElementById("continueButton").addEventListener("click", function() {
+    document
+      .getElementById("continueButton")
+      .addEventListener("click", function () {
 
-      alert("هون رح نحط الهدية الحقيقية 🎁💗");
+        alert("هون رح نحط الهدية الحقيقية 🎁💗");
 
-    });
+      });
 
   </script>
 
