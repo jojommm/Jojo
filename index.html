@@ -1,51 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Happy Birthday, Murad 🦇🎀</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <main>
-    <h1>Happy Birthday, Murad 🦇🎀</h1>
+  <!-- Falling stickers -->
+  <div class="falling falling1">🎀</div>
+  <div class="falling falling2">💗</div>
+  <div class="falling falling3">🦇</div>
+  <div class="falling falling4">✨</div>
+  <div class="falling falling5">🎀</div>
+  <div class="falling falling6">♡</div>
+  <div class="falling falling7">🦇</div>
+  <div class="falling falling8">💗</div>
+  <div class="falling falling9">✦</div>
+  <div class="falling falling10">🎀</div>
 
-    <p>I made something little for you...</p>
 
-    <button id="openGift">Open your gift 🎁</button>
+  <!-- الصفحة الأولى -->
+  <main id="welcome" class="page">
 
-    <section id="gift" style="display: none;">
-      <h2>A little surprise for you 💗</h2>
+    <div class="sticker sticker1">🎀</div>
+    <div class="sticker sticker2">🦇</div>
+    <div class="sticker sticker3">💗</div>
+    <div class="sticker sticker4">✨</div>
 
-      <p>
-        Here you can write your own message to Murad.
-        Replace this text with whatever you want.
-      </p>
+    <p class="tiny">
+      A little surprise for you ♡
+    </p>
 
-      <div>
-        <h3>Our memories 📸</h3>
-        <p>Add your photos here later.</p>
-      </div>
+    <h1>
+      Happy Birthday,
+      <span>Murad</span>
+    </h1>
 
-      <div>
-        <h3>Little things I remember 🎀</h3>
-        <p>Write your memories, dates, songs, or anything you want here.</p>
-      </div>
+    <p class="arabic-title">
+      عيد ميلاد سعيد يا مراد 🎀
+    </p>
 
-      <div>
-        <h3>One last thing 🦇</h3>
-        <p>Write your final birthday message here.</p>
-      </div>
-    </section>
+    <p class="intro">
+      I made something little for you...
+    </p>
+
+    <button id="openGift" class="main-button">
+      افتح هديتك 🎁
+      <small>Open your gift</small>
+    </button>
+
   </main>
 
+
+  <!-- سؤال قبل الهدية -->
+  <section id="questionPage" class="page hidden">
+
+    <div class="question-card">
+
+      <div class="question-sticker">
+        🦇🎀
+      </div>
+
+      <p class="question-intro">
+        قبل ما تفتح هديتك… بدي أسألك سؤال 🥺🎀
+      </p>
+
+      <p class="question-en">
+        Before you open your gift... I have a question for you.
+      </p>
+
+      <h2>
+        مراد، بتحبّني ولا لأ؟ 💗
+      </h2>
+
+      <p class="question-en">
+        Murad, do you love me or not?
+      </p>
+
+
+      <div class="buttons">
+
+        <button id="yesButton" class="yes">
+          إيه حبيبي 💗
+          <small>Yes, my love</small>
+        </button>
+
+        <button id="noButton" class="no">
+          لا 😈
+          <small>No</small>
+        </button>
+
+      </div>
+
+      <p id="noMessage" class="no-message"></p>
+
+    </div>
+
+  </section>
+
+
+  <!-- صفحة الهدية -->
+  <section id="giftPage" class="page hidden">
+
+    <div class="gift-card">
+
+      <div class="gift-stickers">
+        🎀 🦇 💗
+      </div>
+
+      <p class="tiny">
+        You said yes ♡
+      </p>
+
+      <h2>
+        كنت عارفة إنك رح تقول إيه 🥺💗
+      </h2>
+
+      <p class="gift-english">
+        I knew you couldn't say no.
+      </p>
+
+      <p class="gift-text">
+        وهلّق في شي صغير حضّرته إلك... 🎁
+      </p>
+
+      <button id="continueButton" class="main-button">
+        كمّل المفاجأة 🎁
+        <small>Continue</small>
+      </button>
+
+    </div>
+
+  </section>
+
+
   <script>
-    document.getElementById("openGift").onclick = function() {
-      document.getElementById("gift").style.display = "block";
-      this.style.display = "none";
-    };
+
+    const welcome = document.getElementById("welcome");
+    const questionPage = document.getElementById("questionPage");
+    const giftPage = document.getElementById("giftPage");
+
+    const openGift = document.getElementById("openGift");
+    const yesButton = document.getElementById("yesButton");
+    const noButton = document.getElementById("noButton");
+
+    const noMessage = document.getElementById("noMessage");
+
+    let noCount = 0;
+
+
+    /* فتح السؤال */
+
+    openGift.addEventListener("click", function() {
+
+      welcome.classList.add("hidden");
+
+      setTimeout(function() {
+        questionPage.classList.remove("hidden");
+      }, 400);
+
+    });
+
+
+    /* مقلب زر لا */
+
+    noButton.addEventListener("click", function() {
+
+      noCount++;
+
+
+      if (noCount === 1) {
+
+        noMessage.textContent = "ليش؟ 🥺";
+
+      }
+
+
+      else if (noCount === 2) {
+
+        noMessage.textContent = "بدّك تبكّيني؟ 😭";
+
+      }
+
+
+      else if (noCount === 3) {
+
+        noMessage.textContent =
+          "ليش عم تحاول تزعلني؟ 😭💔";
+
+      }
+
+
+      /* الزر يهرب */
+
+      if (noCount < 3) {
+
+        noButton.style.position = "fixed";
+
+        const maxX = window.innerWidth - noButton.offsetWidth - 20;
+        const maxY = window.innerHeight - noButton.offsetHeight - 20;
+
+        const randomX = Math.max(20, Math.random() * maxX);
+        const randomY = Math.max(20, Math.random() * maxY);
+
+        noButton.style.left = randomX + "px";
+        noButton.style.top = randomY + "px";
+
+      }
+
+
+      /* بعد المرة الثالثة يختفي */
+
+      else {
+
+        setTimeout(function() {
+
+          noButton.style.display = "none";
+
+          noMessage.textContent =
+            "خلص... ما ضل قدامك غير إيه 😭💗";
+
+        }, 500);
+
+      }
+
+    });
+
+
+    /* نعم */
+
+    yesButton.addEventListener("click", function() {
+
+      questionPage.classList.add("hidden");
+
+      setTimeout(function() {
+
+        giftPage.classList.remove("hidden");
+
+      }, 400);
+
+    });
+
+
+    /* زر استمرار المفاجأة */
+
+    document.getElementById("continueButton").addEventListener("click", function() {
+
+      alert("هون رح نحط الهدية الحقيقية 🎁💗");
+
+    });
+
   </script>
 
 </body>
