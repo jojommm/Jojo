@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css"><head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Murad 🦇🎀</title>
+  <title>Happy Birthday, Murad 🦇🎀</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <h1>Happy Birthday, Murad 🦇🎀</h1>
+  <main>
+    <h1>Happy Birthday, Murad 🦇🎀</h1>
 
-  <p>I made something little for you...</p>
+    <p>I made something little for you...</p>
 
-  <button>Open your gift 🎁</button>
+    <button id="openGift">Open your gift 🎁</button>
+
+    <section id="gift" style="display: none;">
+      <h2>A little surprise for you 💗</h2>
+
+      <p>
+        Here you can write your own message to Murad.
+        Replace this text with whatever you want.
+      </p>
+
+      <div>
+        <h3>Our memories 📸</h3>
+        <p>Add your photos here later.</p>
+      </div>
+
+      <div>
+        <h3>Little things I remember 🎀</h3>
+        <p>Write your memories, dates, songs, or anything you want here.</p>
+      </div>
+
+      <div>
+        <h3>One last thing 🦇</h3>
+        <p>Write your final birthday message here.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("openGift").onclick = function() {
+      document.getElementById("gift").style.display = "block";
+      this.style.display = "none";
+    };
+  </script>
 
 </body>
 </html>
