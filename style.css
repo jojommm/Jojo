@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #050509, #11152b, #24152f);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "✦  ♡  ✧  🦇  ✦  🎀  ♡  ✧";
+  position: fixed;
+  inset: 0;
+  font-size: 28px;
+  line-height: 90px;
+  letter-spacing: 25px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+h1 {
+  margin-top: 25vh;
+  font-size: 38px;
+  color: #fff;
+  text-shadow: 0 0 15px #ff8fd8, 0 0 35px #8c7cff;
+}
+
+p {
+  margin: 20px auto;
+  font-size: 18px;
+  color: #eee;
+}
+
+button {
+  margin-top: 25px;
+  padding: 15px 28px;
+  border: 1px solid #ff9ddd;
+  border-radius: 30px;
+  background: rgba(255, 143, 216, 0.15);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 143, 216, 0.35);
+}
+
+button:hover {
+  background: rgba(255, 143, 216, 0.3);
+  transform: scale(1.04);
+}
