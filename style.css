@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Wonderful Christmas";
+  src: url("WonderfulChristmas_PERSONAL_USE_ONLY.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lamar";
+  src: url("Lamar-Font-1.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +25,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 
-  font-family: "Cairo", sans-serif;
+  font-family: "Lamar", sans-serif;
 
   color: white;
   text-align: center;
@@ -251,10 +264,7 @@ body {
 }
 
 h1 {
-  font-family:
-    "Playfair Display",
-    serif;
-
+font-family: "Wonderful Christmas", sans-serif; 
   font-size:
     clamp(48px, 11vw, 86px);
 
@@ -275,6 +285,7 @@ h1 span {
 }
 
 .arabic-title {
+  font-family: "Lamar", sans-serif;
   margin-top: 20px;
 
   color: #fff1fa;
@@ -283,6 +294,7 @@ h1 span {
 }
 
 .intro {
+  font-family: "Wonderful Christmas", sans-serif;
   margin-top: 8px;
 
   color: #bfb4c4;
@@ -344,6 +356,7 @@ h1 span {
 }
 
 .main-button small {
+  font-family: "Wonderful Christmas", sans-serif;
   display: block;
 
   margin-top: 2px;
@@ -411,12 +424,15 @@ h1 span {
 }
 
 .question-intro {
+  font-family: "Lamar", sans-serif;
   color: #f3d9ec;
 
   font-size: 16px;
 }
 
 .question-en {
+  .question-en {
+  font-family: "Wonderful Christmas", sans-serif;
   margin-top: 7px;
 
   color: #9d93a5;
@@ -425,6 +441,7 @@ h1 span {
 }
 
 h2 {
+  font-family: "Lamar", sans-serif;
   margin-top: 25px;
 
   color: white;
@@ -453,6 +470,7 @@ h2 {
 }
 
 .buttons button {
+  font-family: "Lamar", sans-serif;
   min-width: 145px;
 
   padding: 13px 18px;
@@ -475,6 +493,7 @@ h2 {
 }
 
 .buttons button small {
+  font-family: "Wonderful Christmas", sans-serif;
   display: block;
 
   margin-top: 2px;
@@ -518,6 +537,7 @@ h2 {
 }
 
 .no-message {
+  font-family: "Lamar", sans-serif;
   min-height: 30px;
 
   margin-top: 25px;
@@ -533,6 +553,7 @@ h2 {
 ========================= */
 
 .gift-stickers {
+  font-family: "Lamar", sans-serif;
   font-size: 44px;
 
   margin-bottom: 18px;
@@ -544,10 +565,12 @@ h2 {
 }
 
 .gift-card h2 {
+  font-family: "Lamar", sans-serif;
   margin-top: 10px;
 }
 
 .gift-english {
+  font-family: "Wonderful Christmas", sans-serif;
   margin-top: 10px;
 
   color: #aaa0b1;
@@ -556,6 +579,7 @@ h2 {
 }
 
 .gift-text {
+  font-family: "Lamar", sans-serif;
   margin-top: 20px;
 
   color: #edd6e7;
