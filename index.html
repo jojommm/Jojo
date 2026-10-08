@@ -522,18 +522,14 @@
        CONTINUE
     ========================== */
 
-    document
-      .getElementById("continueButton")
-      .addEventListener(
-        "click",
-        function () {
-
-          alert(
-            "هون رح نحط الهدية الحقيقية 🎁💗"
-          );
-
-        }
-      );
+   document
+  .getElementById("continueButton")
+  .addEventListener("click", function () {
+    document.getElementById("realGiftPage").classList.remove("hidden");
+    document.getElementById("realGiftPage").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
 
 
   </script>
