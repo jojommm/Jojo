@@ -11,20 +11,40 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 50% 20%, rgba(117, 71, 137, 0.28), transparent 35%),
-    radial-gradient(circle at 10% 80%, rgba(255, 105, 190, 0.12), transparent 30%),
-    linear-gradient(145deg, #04040a 0%, #0b0915 48%, #160d1d 100%);
-  color: #fff;
+
   font-family: "Cairo", sans-serif;
+
+  color: white;
   text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(130, 75, 150, 0.28),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(255, 105, 190, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #04040a,
+      #0b0915 48%,
+      #160d1d
+    );
 }
 
-/* الصفحات */
+
+/* =========================
+   PAGES
+========================= */
 
 .page {
   min-height: 100vh;
   width: 100%;
+
   position: relative;
 
   display: flex;
@@ -41,113 +61,152 @@ body {
   display: none !important;
 }
 
-/* النص الصغير */
 
-.tiny {
-  color: #e8b8dc;
-  font-size: 13px;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
+/* =========================
+   MINI STICKER RAIN
+========================= */
+
+.sticker-rain {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 50;
 }
 
-/* العنوان */
+.rain-sticker {
+  position: absolute;
 
-h1 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(48px, 11vw, 86px);
-  line-height: 1.05;
-  font-weight: 600;
+  top: -80px;
 
-  text-shadow:
-    0 0 12px rgba(255, 145, 215, 0.65),
-    0 0 35px rgba(135, 90, 220, 0.35);
+  width: 48px;
+  height: 48px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+
+  animation:
+    stickerFall 9s linear infinite;
+
+  opacity: 0.9;
 }
 
-h1 span {
-  color: #ffaddb;
+
+/* أماكن الستيكرز */
+
+.sticker-a {
+  left: 7%;
+  animation-delay: 0s;
 }
 
-.arabic-title {
-  margin-top: 20px;
-  color: #fff1fa;
-  font-size: 21px;
+.sticker-b {
+  left: 23%;
+  animation-delay: 1.8s;
 }
 
-.intro {
-  margin-top: 8px;
-  color: #bfb4c4;
-  font-size: 15px;
+.sticker-c {
+  left: 42%;
+  animation-delay: 3.6s;
 }
 
-/* الأزرار */
-
-.main-button {
-  margin-top: 30px;
-
-  padding: 15px 32px;
-
-  border-radius: 50px;
-  border: 1px solid rgba(255, 160, 220, 0.7);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 155, 215, 0.18),
-      rgba(130, 90, 190, 0.12)
-    );
-
-  color: white;
-
-  font-family: "Cairo", sans-serif;
-  font-size: 16px;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 0 20px rgba(255, 120, 205, 0.2),
-    inset 0 0 20px rgba(255, 255, 255, 0.025);
-
-  backdrop-filter: blur(12px);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
+.sticker-d {
+  left: 64%;
+  animation-delay: 5.4s;
 }
 
-.main-button:hover {
-  transform: translateY(-3px) scale(1.04);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 155, 215, 0.28),
-      rgba(145, 95, 210, 0.2)
-    );
-
-  box-shadow:
-    0 0 35px rgba(255, 120, 205, 0.45);
+.sticker-e {
+  left: 84%;
+  animation-delay: 7.2s;
 }
 
-.main-button small {
-  display: block;
-  margin-top: 2px;
 
-  font-size: 10px;
-  opacity: 0.65;
+/* التكرار */
+
+.sticker-a:nth-of-type(6) {
+  left: 15%;
+  animation-delay: 2s;
 }
 
-/* الزخارف الثابتة */
+.sticker-b:nth-of-type(7) {
+  left: 34%;
+  animation-delay: 3.5s;
+}
+
+.sticker-c:nth-of-type(8) {
+  left: 53%;
+  animation-delay: 5s;
+}
+
+.sticker-d:nth-of-type(9) {
+  left: 74%;
+  animation-delay: 6.5s;
+}
+
+.sticker-e:nth-of-type(10) {
+  left: 94%;
+  animation-delay: 8s;
+}
+
+
+/* سقوط الستيكرز */
+
+@keyframes stickerFall {
+
+  0% {
+    transform:
+      translateY(-100px)
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  50% {
+    transform:
+      translateY(50vh)
+      rotate(180deg);
+  }
+
+  100% {
+    transform:
+      translateY(110vh)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+}
+
+
+/* =========================
+   DECORATION
+========================= */
 
 .sticker {
   position: absolute;
 
-  font-size: 40px;
+  font-size: 38px;
+
+  color: #ffb8df;
 
   filter:
-    drop-shadow(0 0 10px rgba(255, 130, 210, 0.5));
+    drop-shadow(
+      0 0 12px
+      rgba(255, 130, 215, 0.55)
+    );
 
-  animation: floating 4s ease-in-out infinite;
+  animation:
+    floating 4s ease-in-out infinite;
 }
 
 .sticker1 {
@@ -158,97 +217,155 @@ h1 span {
 .sticker2 {
   top: 22%;
   right: 9%;
+
   animation-delay: 1s;
 }
 
 .sticker3 {
   bottom: 17%;
   left: 13%;
+
   animation-delay: 2s;
 }
 
 .sticker4 {
   bottom: 20%;
   right: 13%;
+
   animation-delay: 3s;
 }
 
-/* المطر ديال الستيكرز */
 
-.falling {
-  position: fixed;
+/* =========================
+   TEXT
+========================= */
 
-  top: -100px;
+.tiny {
+  margin-bottom: 18px;
 
-  font-size: 25px;
+  color: #e8b8dc;
 
-  pointer-events: none;
+  font-size: 13px;
 
-  z-index: 30;
-
-  opacity: 0.8;
-
-  animation:
-    stickerRain 8s linear infinite;
+  letter-spacing: 2px;
 }
 
-.falling1 {
-  left: 4%;
-  animation-delay: 0s;
+h1 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(48px, 11vw, 86px);
+
+  line-height: 1.05;
+
+  font-weight: 600;
+
+  text-shadow:
+    0 0 12px
+    rgba(255, 145, 215, 0.65),
+
+    0 0 35px
+    rgba(135, 90, 220, 0.35);
 }
 
-.falling2 {
-  left: 14%;
-  animation-delay: 2.2s;
+h1 span {
+  color: #ffaddb;
 }
 
-.falling3 {
-  left: 25%;
-  animation-delay: 4.5s;
+.arabic-title {
+  margin-top: 20px;
+
+  color: #fff1fa;
+
+  font-size: 21px;
 }
 
-.falling4 {
-  left: 37%;
-  animation-delay: 1.3s;
+.intro {
+  margin-top: 8px;
+
+  color: #bfb4c4;
+
+  font-size: 15px;
 }
 
-.falling5 {
-  left: 49%;
-  animation-delay: 3.4s;
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button {
+  margin-top: 30px;
+
+  padding: 15px 32px;
+
+  border-radius: 50px;
+
+  border:
+    1px solid
+    rgba(255, 160, 220, 0.7);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 155, 215, 0.18),
+      rgba(130, 90, 190, 0.12)
+    );
+
+  color: white;
+
+  font-family:
+    "Cairo",
+    sans-serif;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 20px
+    rgba(255, 120, 205, 0.2);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    0.3s ease;
 }
 
-.falling6 {
-  left: 61%;
-  animation-delay: 5.2s;
+.main-button:hover {
+  transform:
+    translateY(-3px)
+    scale(1.04);
+
+  box-shadow:
+    0 0 35px
+    rgba(255, 120, 205, 0.45);
 }
 
-.falling7 {
-  left: 73%;
-  animation-delay: 0.8s;
+.main-button small {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 10px;
+
+  opacity: 0.65;
 }
 
-.falling8 {
-  left: 84%;
-  animation-delay: 3.8s;
-}
 
-.falling9 {
-  left: 92%;
-  animation-delay: 6s;
-}
-
-.falling10 {
-  left: 44%;
-  animation-delay: 6.8s;
-}
-
-/* كارت السؤال والهدية */
+/* =========================
+   CARDS
+========================= */
 
 .question-card,
 .gift-card {
-  width: min(92%, 620px);
 
-  padding: 45px 30px;
+  width:
+    min(92%, 620px);
+
+  padding:
+    45px 30px;
 
   border-radius: 32px;
 
@@ -259,32 +376,43 @@ h1 span {
       rgba(12, 10, 20, 0.72)
     );
 
-  border: 1px solid rgba(255, 180, 230, 0.16);
+  border:
+    1px solid
+    rgba(255, 180, 230, 0.16);
 
-  backdrop-filter: blur(20px);
+  backdrop-filter:
+    blur(20px);
 
   box-shadow:
-    0 0 60px rgba(150, 75, 180, 0.16),
-    inset 0 0 35px rgba(255, 255, 255, 0.018);
+    0 0 60px
+    rgba(150, 75, 180, 0.16);
 
-  animation: cardIn 0.9s ease;
+  animation:
+    cardIn 0.9s ease;
 }
 
-/* ستيكر السؤال */
+
+/* =========================
+   QUESTION
+========================= */
 
 .question-sticker {
   font-size: 52px;
 
   margin-bottom: 18px;
 
-  filter:
-    drop-shadow(0 0 15px rgba(255, 130, 215, 0.55));
-}
+  color: #ffb6df;
 
-/* نص السؤال */
+  filter:
+    drop-shadow(
+      0 0 15px
+      rgba(255, 130, 215, 0.55)
+    );
+}
 
 .question-intro {
   color: #f3d9ec;
+
   font-size: 16px;
 }
 
@@ -301,13 +429,18 @@ h2 {
 
   color: white;
 
-  font-size: clamp(25px, 6vw, 38px);
+  font-size:
+    clamp(25px, 6vw, 38px);
 
   text-shadow:
-    0 0 15px rgba(255, 145, 215, 0.42);
+    0 0 15px
+    rgba(255, 145, 215, 0.42);
 }
 
-/* أزرار السؤال */
+
+/* =========================
+   YES / NO
+========================= */
 
 .buttons {
   display: flex;
@@ -326,7 +459,9 @@ h2 {
 
   border-radius: 28px;
 
-  font-family: "Cairo", sans-serif;
+  font-family:
+    "Cairo",
+    sans-serif;
 
   font-size: 15px;
 
@@ -350,24 +485,29 @@ h2 {
 }
 
 .yes {
-  border: 1px solid #ff9bd8;
+  border:
+    1px solid #ff9bd8;
 
   background:
     rgba(255, 125, 200, 0.17);
 
   box-shadow:
-    0 0 20px rgba(255, 110, 195, 0.18);
+    0 0 20px
+    rgba(255, 110, 195, 0.18);
 }
 
 .yes:hover {
   transform: scale(1.07);
 
   box-shadow:
-    0 0 35px rgba(255, 110, 195, 0.45);
+    0 0 35px
+    rgba(255, 110, 195, 0.45);
 }
 
 .no {
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.18);
 
   background:
     rgba(255, 255, 255, 0.035);
@@ -377,8 +517,6 @@ h2 {
   transform: scale(1.05);
 }
 
-/* رسائل زر لا */
-
 .no-message {
   min-height: 30px;
 
@@ -387,18 +525,22 @@ h2 {
   color: #ffabd9;
 
   font-size: 16px;
-
-  animation: messageIn 0.4s ease;
 }
 
-/* صفحة الهدية */
+
+/* =========================
+   GIFT
+========================= */
 
 .gift-stickers {
   font-size: 44px;
 
   margin-bottom: 18px;
 
-  animation: floating 3s ease-in-out infinite;
+  color: #ffb5df;
+
+  animation:
+    floating 3s ease-in-out infinite;
 }
 
 .gift-card h2 {
@@ -421,87 +563,65 @@ h2 {
   font-size: 15px;
 }
 
-/* الحركات */
+
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes pageIn {
+
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform:
+      translateY(20px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
 }
 
 @keyframes cardIn {
+
   from {
     opacity: 0;
-    transform: scale(0.92) translateY(20px);
+
+    transform:
+      scale(0.92)
+      translateY(20px);
   }
 
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
 
-@keyframes messageIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    transform:
+      scale(1)
+      translateY(0);
   }
 }
 
 @keyframes floating {
+
   0%,
   100% {
-    transform: translateY(0) rotate(-4deg);
-  }
-
-  50% {
-    transform: translateY(-16px) rotate(4deg);
-  }
-}
-
-@keyframes stickerRain {
-  0% {
     transform:
-      translateY(-100px)
-      translateX(0)
-      rotate(-8deg);
-
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 0.85;
+      translateY(0)
+      rotate(-4deg);
   }
 
   50% {
     transform:
-      translateY(50vh)
-      translateX(25px)
-      rotate(8deg);
-  }
-
-  100% {
-    transform:
-      translateY(110vh)
-      translateX(-20px)
-      rotate(-6deg);
-
-    opacity: 0;
+      translateY(-16px)
+      rotate(4deg);
   }
 }
 
-/* الهاتف */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
@@ -533,30 +653,17 @@ h2 {
 
   .question-card,
   .gift-card {
-    padding: 38px 22px;
+    padding:
+      38px 22px;
   }
 
   .sticker {
     font-size: 30px;
   }
 
-  .sticker1 {
-    left: 5%;
+  .rain-sticker {
+    width: 42px;
+    height: 42px;
   }
 
-  .sticker2 {
-    right: 5%;
-  }
-
-  .sticker3 {
-    left: 7%;
-  }
-
-  .sticker4 {
-    right: 7%;
-  }
-
-  .falling {
-    font-size: 22px;
-  }
 }
