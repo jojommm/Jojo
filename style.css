@@ -691,3 +691,6 @@ h2 {
   }
 
 }
+  .rain-sticker {
+  mix-blend-mode: multiply;
+}
