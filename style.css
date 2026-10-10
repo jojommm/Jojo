@@ -358,3 +358,53 @@ video:has(source[src=""]) {
   }
 }
 
+/* FIX: stop giant sticker images */
+.sticker-rain {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.sticker-rain .rain-sticker {
+  position: absolute !important;
+  width: 42px !important;
+  height: 42px !important;
+  max-width: 42px !important;
+  max-height: 42px !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  animation: stickerFall 14s linear infinite !important;
+}
+
+#welcome {
+  position: relative;
+  z-index: 1 !important;
+}
+
+#questionPage,
+#giftPage,
+#realGiftPage,
+#letterPage {
+  position: relative;
+  z-index: 1;
+}
+
+body:not(:has(#welcome:not(.hidden))) .sticker-rain {
+  display: none !important;
+}
+
+.memory-photo[src=""] {
+  display: none !important;
+}
+
+.sticker-rain img {
+  background: transparent !important;
+}
+
