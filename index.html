@@ -38,7 +38,6 @@
       <h1>كنت عارفة إنك رح تقول إيه 🥺💗</h1>
       <p>I knew you couldn't say no.</p>
       <p>وهلّق في شي صغير حضّرته إلك... 🎁</p>
-
       <button onclick="showPage('memoriesPage')">ذكرياتنا 📸</button>
       <button onclick="showPage('poemChoicePage')">بتتوقع أحبك ولا لا؟ 🥹</button>
       <button onclick="showPage('lastChoicePage')">آخر شي إلك 🎁💌</button>
@@ -111,13 +110,10 @@
       <div class="poem">
         ماذا أقول له لو جاء يسألني<br>
         إن كنت أكرهه أو كنت أهواه، ماذا أقول؟<br><br>
-
         إذا راحت أصابعه تلملم الليل عن شعري وترعاه<br>
         وكيف أسمح أن يدنو بمقعده؟ وأن تنام على خصري ذراعاه<br><br>
-
         غدًا إذا جاء أعطيه رسائله<br>
         ونطعم النار أحلى ما كتبناه<br><br>
-
         حبيبتي هل أنا حقًا حبيبته وهل أصدق بعد الهجر دعواه؟<br>
         أما انتهت من سنين قصتي معه، ألم تمت كخيوط الشمس ذكراه؟
       </div>
@@ -155,13 +151,16 @@
       const target = document.getElementById(pageId);
       if (target) {
         target.classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'instant' });
+        window.scrollTo(0, 0);
       }
     }
+
+    let noClicks = 0;
 
     function moveNoButton() {
       const button = document.getElementById('noButton');
       const message = document.getElementById('noMessage');
+
       const messages = [
         'ليش؟ 🥺',
         'بدك تبكّيني؟ 😭',
@@ -169,14 +168,27 @@
         'خلص... ما ضل قدامك غير إيه 😭💗'
       ];
 
-      message.textContent = messages[Math.floor(Math.random() * messages.length)];
+      message.textContent = messages[Math.min(noClicks, messages.length - 1)];
+      noClicks++;
 
-      button.style.position = 'relative';
-      button.style.left = (Math.random() * 100 - 50) + 'px';
-      button.style.top = (Math.random() * 60 - 30) + 'px';
+      button.style.display = 'none';
+
+      if (noClicks >= 4) {
+        return;
+      }
+
+      setTimeout(function() {
+        const maxLeft = Math.max(0, window.innerWidth - button.offsetWidth - 20);
+        const maxTop = Math.max(0, window.innerHeight - button.offsetHeight - 20);
+
+        button.style.position = 'fixed';
+        button.style.zIndex = '9999';
+        button.style.left = (10 + Math.random() * Math.max(0, maxLeft - 10)) + 'px';
+        button.style.top = (10 + Math.random() * Math.max(0, maxTop - 10)) + 'px';
+        button.style.display = 'block';
+      }, 700);
     }
   </script>
 
 </body>
 </html>
-
