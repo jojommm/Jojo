@@ -159,16 +159,42 @@
 
   let noClicks = 0;
 
-  function moveNoButton() {
-    const button = document.getElementById('noButton');
-    const message = document.getElementById('noMessage');
+  
+let noClicks = 0;
 
-    const messages = [
-      'ليش؟ 🥺',
-      'بدك تبكّيني؟ 😭',
-      'ليش عم تحاول تزعلني؟ 😭💔',
-      'خلص... ما ضل قدامك غير إيه 😭💗'
-    ];
+function moveNoButton() {
+  const button = document.getElementById('noButton');
+  const message = document.getElementById('noMessage');
+
+  if (!button || !message) return;
+
+  const messages = [
+    'ليش؟ 🥺',
+    'بدك تبكّيني؟ 😭',
+    'ليش عم تحاول تزعلني؟ 😭💔',
+    'خلص... ما ضل قدامك غير إيه 😭💗'
+  ];
+
+  message.textContent = messages[Math.min(noClicks, 3)];
+
+  if (noClicks >= 3) {
+    button.style.display = 'none';
+    return;
+  }
+
+  noClicks++;
+
+  button.style.position = 'fixed';
+  button.style.left = Math.max(
+    10,
+    Math.random() * (window.innerWidth - button.offsetWidth - 20)
+  ) + 'px';
+
+  button.style.top = Math.max(
+    10,
+    Math.random() * (window.innerHeight - button.offsetHeight - 20)
+  ) + 'px';
+}
 
     if (!button || !message) return;
 
