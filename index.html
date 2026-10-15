@@ -142,81 +142,54 @@
     </div>
   </div>
 
-  
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.add('hidden');
+      });
 
-<script>
-  function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(function(page) {
-      page.classList.add('hidden');
-    });
+      const target = document.getElementById(pageId);
 
-    const target = document.getElementById(pageId);
-    if (target) {
-      target.classList.remove('hidden');
-      window.scrollTo(0, 0);
-    }
-  }
-
-  let noClicks = 0;
-
-  
-let noClicks = 0;
-
-function moveNoButton() {
-  const button = document.getElementById('noButton');
-  const message = document.getElementById('noMessage');
-
-  if (!button || !message) return;
-
-  const messages = [
-    'ليش؟ 🥺',
-    'بدك تبكّيني؟ 😭',
-    'ليش عم تحاول تزعلني؟ 😭💔',
-    'خلص... ما ضل قدامك غير إيه 😭💗'
-  ];
-
-  message.textContent = messages[Math.min(noClicks, 3)];
-
-  if (noClicks >= 3) {
-    button.style.display = 'none';
-    return;
-  }
-
-  noClicks++;
-
-  button.style.position = 'fixed';
-  button.style.left = Math.max(
-    10,
-    Math.random() * (window.innerWidth - button.offsetWidth - 20)
-  ) + 'px';
-
-  button.style.top = Math.max(
-    10,
-    Math.random() * (window.innerHeight - button.offsetHeight - 20)
-  ) + 'px';
-}
-
-    if (!button || !message) return;
-
-    message.textContent = messages[Math.min(noClicks, messages.length - 1)];
-    noClicks++;
-
-    if (noClicks >= 4) {
-      button.remove();
-      return;
+      if (target) {
+        target.classList.remove('hidden');
+        window.scrollTo(0, 0);
+      }
     }
 
-    button.style.position = 'fixed';
-    button.style.zIndex = '9999';
+    let noClicks = 0;
 
-    const maxX = Math.max(10, window.innerWidth - button.offsetWidth - 10);
-    const maxY = Math.max(10, window.innerHeight - button.offsetHeight - 10);
+    function moveNoButton() {
+      const button = document.getElementById('noButton');
+      const message = document.getElementById('noMessage');
 
-    button.style.left = (10 + Math.random() * (maxX - 10)) + 'px';
-    button.style.top = (10 + Math.random() * (maxY - 10)) + 'px';
-  }
-</script>
+      if (!button || !message) return;
 
+      const messages = [
+        'ليش؟ 🥺',
+        'بدك تبكّيني؟ 😭',
+        'ليش عم تحاول تزعلني؟ 😭💔',
+        'خلص... ما ضل قدامك غير إيه 😭💗'
+      ];
+
+      message.textContent = messages[noClicks];
+
+      if (noClicks >= 3) {
+        button.remove();
+        return;
+      }
+
+      noClicks++;
+
+      const maxLeft = Math.max(0, window.innerWidth - button.offsetWidth);
+      const maxTop = Math.max(0, window.innerHeight - button.offsetHeight);
+
+      button.style.position = 'fixed';
+      button.style.zIndex = '9999';
+      button.style.left = Math.random() * maxLeft + 'px';
+      button.style.top = Math.random() * maxTop + 'px';
+    }
+  </script>
 
 </body>
 </html>
+
