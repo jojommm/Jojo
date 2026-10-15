@@ -157,12 +157,15 @@
 
     let noClicks = 0;
 
-    function moveNoButton() {
-      const button = document.getElementById('noButton');
-      const message = document.getElementById('noMessage');
 
-      const messages = [
-        'ليش؟ 🥺',
+function moveNoButton() {
+  const button = document.getElementById('noButton');
+  const message = document.getElementById('noMessage');
+
+  message.textContent = 'ليش؟ 🥺💔';
+  button.remove();
+}
+
         'بدك تبكّيني؟ 😭',
         'ليش عم تحاول تزعلني؟ 😭💔',
         'خلص... ما ضل قدامك غير إيه 😭💗'
