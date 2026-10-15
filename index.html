@@ -142,56 +142,33 @@
     </div>
   </div>
 
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page').forEach(function(page) {
-        page.classList.add('hidden');
-      });
+  
+<script>
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(function(page) {
+      page.classList.add('hidden');
+    });
 
-      const target = document.getElementById(pageId);
-      if (target) {
-        target.classList.remove('hidden');
-        window.scrollTo(0, 0);
-      }
+    const target = document.getElementById(pageId);
+    if (target) {
+      target.classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function moveNoButton() {
+    const button = document.getElementById('noButton');
+    const message = document.getElementById('noMessage');
+
+    if (message) {
+      message.textContent = 'ليش؟ 🥺💔';
     }
 
-    let noClicks = 0;
-
-
-function moveNoButton() {
-  const button = document.getElementById('noButton');
-  const message = document.getElementById('noMessage');
-
-  message.textContent = 'ليش؟ 🥺💔';
-  button.remove();
-}
-
-        'بدك تبكّيني؟ 😭',
-        'ليش عم تحاول تزعلني؟ 😭💔',
-        'خلص... ما ضل قدامك غير إيه 😭💗'
-      ];
-
-      message.textContent = messages[Math.min(noClicks, messages.length - 1)];
-      noClicks++;
-
-      button.style.display = 'none';
-
-      if (noClicks >= 4) {
-        return;
-      }
-
-      setTimeout(function() {
-        const maxLeft = Math.max(0, window.innerWidth - button.offsetWidth - 20);
-        const maxTop = Math.max(0, window.innerHeight - button.offsetHeight - 20);
-
-        button.style.position = 'fixed';
-        button.style.zIndex = '9999';
-        button.style.left = (10 + Math.random() * Math.max(0, maxLeft - 10)) + 'px';
-        button.style.top = (10 + Math.random() * Math.max(0, maxTop - 10)) + 'px';
-        button.style.display = 'block';
-      }, 700);
+    if (button) {
+      button.remove();
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
