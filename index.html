@@ -24,11 +24,13 @@
       <p>قبل ما تفتح هديتك… بدي أسألك سؤال 🥺🎀</p>
       <p class="english">Before you open your gift, I have a question...</p>
       <h2>مراد، بتحبّني ولا لأ؟ 💗</h2>
-      <div class="buttons">
+
+      <div class="buttons" id="answerButtons">
         <button onclick="showPage('giftPage')">إيه حبيبي 💗</button>
-        <button id="noButton" onclick="moveNoButton()">لا 😈</button>
+        <button id="noButton" type="button" onclick="moveNoButton()">لا 😈</button>
       </div>
-      <p id="noMessage"></p>
+
+      <p id="noMessage" aria-live="polite"></p>
     </div>
   </div>
 
@@ -144,6 +146,15 @@
 
   <script>
     function showPage(pageId) {
+      const noButton = document.getElementById('noButton');
+
+      if (noButton) {
+        noButton.style.position = '';
+        noButton.style.left = '';
+        noButton.style.top = '';
+        noButton.style.zIndex = '';
+      }
+
       document.querySelectorAll('.page').forEach(function(page) {
         page.classList.add('hidden');
       });
@@ -173,18 +184,20 @@
 
       message.textContent = messages[noClicks];
 
-      if (noClicks >= 3) {
+      noClicks++;
+
+      if (noClicks >= 4) {
         button.remove();
         return;
       }
 
-      noClicks++;
-
-      const maxLeft = Math.max(0, window.innerWidth - button.offsetWidth);
-      const maxTop = Math.max(0, window.innerHeight - button.offsetHeight);
+      const rect = button.getBoundingClientRect();
+      const maxLeft = Math.max(0, window.innerWidth - rect.width);
+      const maxTop = Math.max(0, window.innerHeight - rect.height);
 
       button.style.position = 'fixed';
       button.style.zIndex = '9999';
+      button.style.margin = '0';
       button.style.left = Math.random() * maxLeft + 'px';
       button.style.top = Math.random() * maxTop + 'px';
     }
@@ -192,4 +205,3 @@
 
 </body>
 </html>
-
