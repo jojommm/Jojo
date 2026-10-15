@@ -332,3 +332,221 @@ h2 {
   }
 }
 
+@font-face {
+  font-family: "Lamar";
+  src: url("Lamar-Font-1.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wonderful Christmas";
+  src: url("WonderfulChristmas_PERSONAL_USE_ONLY.otf") format("opentype");
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lamar", sans-serif;
+  background: #17121b;
+  color: #fff5fa;
+  text-align: center;
+}
+
+button {
+  font-family: "Lamar", sans-serif;
+  cursor: pointer;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.card {
+  width: min(100%, 560px);
+  padding: 28px 20px;
+  border: 1px solid rgba(255, 205, 229, 0.35);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+h1 {
+  font-family: "Wonderful Christmas", "Lamar", sans-serif;
+  color: #ffc5df;
+}
+
+h2 {
+  color: #ffd9e9;
+}
+
+p {
+  line-height: 1.9;
+}
+
+button {
+  border: 1px solid #ffd0e5;
+  border-radius: 30px;
+  padding: 12px 20px;
+  margin: 7px 4px;
+  color: #421b32;
+  background: #ffd9e9;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #fff0f7;
+}
+
+.small,
+.english {
+  color: #ffd2e7;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.memory-page {
+  display: block;
+  padding: 16px 10px 35px;
+  color: #493b40;
+  background: #f6e7eb;
+}
+
+.notebook {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 25px 18px;
+  border-radius: 8px;
+  color: #493b40;
+  background-color: #fffaf5;
+  background-image:
+    linear-gradient(90deg, transparent 39px, #e8a7b9 40px, transparent 41px),
+    repeating-linear-gradient(
+      to bottom,
+      #fffaf5 0,
+      #fffaf5 31px,
+      #c9dce9 32px,
+      #fffaf5 33px
+    );
+  box-shadow: 0 6px 22px rgba(74, 38, 51, 0.15);
+}
+
+.notebook h1 {
+  color: #a34f70;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+}
+
+.memory-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+  margin: 24px 0 34px;
+}
+
+.memory-row.reverse {
+  flex-direction: row;
+}
+
+.memory-photo {
+  width: min(46%, 280px);
+  max-height: 340px;
+  object-fit: contain;
+  padding: 7px;
+  background: white;
+  border: 1px solid #eadce1;
+  box-shadow: 0 4px 12px rgba(70, 42, 52, 0.15);
+  transform: rotate(-1deg);
+}
+
+.memory-row:nth-of-type(even) .memory-photo {
+  transform: rotate(1deg);
+}
+
+.memory-comment {
+  flex: 1;
+  font-family: "Lamar", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.video-section,
+.playlist-section {
+  margin: 35px 0;
+}
+
+.video-section video {
+  display: block;
+  width: 100%;
+  max-height: 460px;
+  border-radius: 12px;
+  background: #000;
+}
+
+.playlist-section iframe {
+  display: block;
+  border: 0;
+  border-radius: 12px;
+}
+
+.poem-card {
+  max-width: 650px;
+}
+
+.poem {
+  font-family: "Lamar", sans-serif;
+  font-size: 18px;
+  line-height: 2.1;
+  white-space: normal;
+  margin: 25px 0;
+}
+
+.final-letter {
+  font-size: 20px;
+  line-height: 2.2;
+  color: #ffe0ed;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 23px 14px;
+  }
+
+  .memory-row {
+    gap: 10px;
+  }
+
+  .memory-photo {
+    width: 45%;
+    max-height: 260px;
+  }
+
+  .memory-comment {
+    font-size: 14px;
+  }
+
+  .poem {
+    font-size: 16px;
+  }
+}
+
