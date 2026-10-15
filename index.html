@@ -143,6 +143,7 @@
   </div>
 
   
+
 <script>
   function showPage(pageId) {
     document.querySelectorAll('.page').forEach(function(page) {
@@ -156,19 +157,40 @@
     }
   }
 
+  let noClicks = 0;
+
   function moveNoButton() {
     const button = document.getElementById('noButton');
     const message = document.getElementById('noMessage');
 
-    if (message) {
-      message.textContent = 'ليش؟ 🥺💔';
+    const messages = [
+      'ليش؟ 🥺',
+      'بدك تبكّيني؟ 😭',
+      'ليش عم تحاول تزعلني؟ 😭💔',
+      'خلص... ما ضل قدامك غير إيه 😭💗'
+    ];
+
+    if (!button || !message) return;
+
+    message.textContent = messages[Math.min(noClicks, messages.length - 1)];
+    noClicks++;
+
+    if (noClicks >= 4) {
+      button.remove();
+      return;
     }
 
-    if (button) {
-      button.remove();
-    }
+    button.style.position = 'fixed';
+    button.style.zIndex = '9999';
+
+    const maxX = Math.max(10, window.innerWidth - button.offsetWidth - 10);
+    const maxY = Math.max(10, window.innerHeight - button.offsetHeight - 10);
+
+    button.style.left = (10 + Math.random() * (maxX - 10)) + 'px';
+    button.style.top = (10 + Math.random() * (maxY - 10)) + 'px';
   }
 </script>
+
 
 </body>
 </html>
