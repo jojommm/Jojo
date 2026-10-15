@@ -2,269 +2,181 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, Murad 🦇🎀</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Murad ♡</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Sticker rain -->
-<div class="sticker-rain">
-  <img src="3C7BC7B2-10E0-4E33-B16D-ECF56F82E248.jpeg" class="rain-sticker sticker-a" alt="">
-  <img src="7BDA4F46-729E-4216-ACD8-F5F3DC3AFB7B.jpeg" class="rain-sticker sticker-b" alt="">
-  <img src="C80D14D1-921F-4DDE-90E0-A716B80F5AED.jpeg" class="rain-sticker sticker-c" alt="">
-  <img src="IMG_2425.jpeg" class="rain-sticker sticker-d" alt="">
-
-  <img src="3C7BC7B2-10E0-4E33-B16D-ECF56F82E248.jpeg" class="rain-sticker sticker-a" alt="">
-  <img src="7BDA4F46-729E-4216-ACD8-F5F3DC3AFB7B.jpeg" class="rain-sticker sticker-b" alt="">
-  <img src="C80D14D1-921F-4DDE-90E0-A716B80F5AED.jpeg" class="rain-sticker sticker-c" alt="">
-  <img src="IMG_2425.jpeg" class="rain-sticker sticker-d" alt="">
-
-  <img src="3C7BC7B2-10E0-4E33-B16D-ECF56F82E248.jpeg" class="rain-sticker sticker-a" alt="">
-  <img src="7BDA4F46-729E-4216-ACD8-F5F3DC3AFB7B.jpeg" class="rain-sticker sticker-b" alt="">
-  <img src="C80D14D1-921F-4DDE-90E0-A716B80F5AED.jpeg" class="rain-sticker sticker-c" alt="">
-  <img src="IMG_2425.jpeg" class="rain-sticker sticker-d" alt="">
-</div>
-
-<!-- PAGE 1: Welcome -->
-<main id="welcome" class="page">
-  <div class="sticker sticker1">♡</div>
-  <div class="sticker sticker2">✦</div>
-  <div class="sticker sticker3">♡</div>
-  <div class="sticker sticker4">✧</div>
-
-  <p class="tiny">A little surprise for you ♡</p>
-  <h1>Happy Birthday, <span>Murad</span></h1>
-  <p class="arabic-title">عيد ميلاد سعيد يا مراد 🎀</p>
-  <p class="intro">I made something little for you...</p>
-
-  <button id="openGift" class="main-button">
-    افتَح هديتك 🎁 <small>Open your gift</small>
-  </button>
-</main>
-
-<!-- PAGE 2: The question -->
-<section id="questionPage" class="page hidden">
-  <div class="question-card">
-    <div class="question-sticker">♡ ✦</div>
-
-    <p class="question-intro">قبل ما تفتح هديتك… بدي أسألك سؤال 🥺🎀</p>
-    <p class="question-en">Before you open your gift... I have a question for you.</p>
-
-    <h2>مراد، بتحبّني ولا لأ؟ 💗</h2>
-    <p class="question-en">Murad, do you love me or not?</p>
-
-    <div class="buttons">
-      <button id="yesButton" class="yes">
-        إيه حبيبي 💗 <small>Yes, my love</small>
-      </button>
-      <button id="noButton" class="no">
-        لا 😈 <small>No</small>
-      </button>
+  <div id="welcomePage" class="page">
+    <div class="card">
+      <p class="small">A little surprise for you ♡</p>
+      <h1>Happy Birthday, Murad 🎂</h1>
+      <h2>عيد ميلاد سعيد يا مراد 🎀</h2>
+      <p>I made something little for you...</p>
+      <button onclick="showPage('questionPage')">افتح هديتك 🎁</button>
     </div>
-
-    <p id="noMessage" class="no-message"></p>
   </div>
-</section>
 
-<!-- PAGE 3: Gift introduction -->
-<section id="giftPage" class="page hidden">
-  <div class="gift-card">
-    <div class="gift-stickers">♡ ✦ ♡</div>
-
-    <p class="tiny">You said yes ♡</p>
-    <h2>كنت عارفة إنك رح تقول إيه 🥺💗</h2>
-    <p class="gift-english">I knew you couldn't say no.</p>
-    <p class="gift-text">وهلّق في شي صغير حضّرته إلك... 🎁</p>
-
-    <div class="real-gift">
-      <div class="gift-section">
-        <span>♡</span>
-        <h3>شي أشياء صغيرة إلك 🎀</h3>
-        <p>جمّعتلك هون شوية من الأشياء واللحظات اللي بتعنيلي 💗</p>
+  <div id="questionPage" class="page hidden">
+    <div class="card">
+      <p>قبل ما تفتح هديتك… بدي أسألك سؤال 🥺🎀</p>
+      <p class="english">Before you open your gift, I have a question...</p>
+      <h2>مراد، بتحبّني ولا لأ؟ 💗</h2>
+      <div class="buttons">
+        <button onclick="showPage('giftPage')">إيه حبيبي 💗</button>
+        <button id="noButton" onclick="moveNoButton()">لا 😈</button>
       </div>
-
-      <div class="gift-section">
-        <span>🦇</span>
-        <h3>ذكرياتنا</h3>
-        <p>كل ذكرى إلها مكان صغير بقلبي، حتى التفاصيل البسيطة 🥺</p>
-      </div>
-
-      <div class="gift-section">
-        <span>🎀</span>
-        <h3>إلك رسالة</h3>
-        <p>وجودك بحياتي ترك أشياء حلوة ما بنساها، وبتمنى يكون يومك مليان فرح 🤍</p>
-      </div>
+      <p id="noMessage"></p>
     </div>
-
-    <button id="continueButton" class="main-button">
-      كمّل المفاجأة 🎁 <small>Continue</small>
-    </button>
   </div>
-</section>
 
-<!-- PAGE 4: The actual gift -->
-<section id="realGiftPage" class="page hidden">
-  <div class="gift-card">
-    <div class="gift-stickers">🦇 ♡ 🎀</div>
+  <div id="giftPage" class="page hidden">
+    <div class="card">
+      <p class="small">You said yes ♡</p>
+      <h1>كنت عارفة إنك رح تقول إيه 🥺💗</h1>
+      <p>I knew you couldn't say no.</p>
+      <p>وهلّق في شي صغير حضّرته إلك... 🎁</p>
 
-    <p class="tiny">Made with love ♡</p>
-    <h2>كل هالأشياء إلك يا مراد 💗</h2>
-    <p class="gift-english">A few little things I made for you.</p>
+      <button onclick="showPage('memoriesPage')">ذكرياتنا 📸</button>
+      <button onclick="showPage('poemChoicePage')">بتتوقع أحبك ولا لا؟ 🥹</button>
+      <button onclick="showPage('lastChoicePage')">آخر شي إلك 🎁💌</button>
+    </div>
+  </div>
 
-    <div class="real-gift">
+  <div id="memoriesPage" class="page hidden memory-page">
+    <div class="notebook">
+      <h1>Little memories ♡</h1>
+      <p class="subtitle">ذكريات صغيرة ما نسيتها 💗</p>
 
-      <div class="gift-section">
-        <span>♡</span>
-        <h3>ذكرياتنا 🎀</h3>
-        <p>هون رح تكون صورنا وذكرياتنا الحلوة.</p>
-
-        <!-- أضيفي صورك لاحقًا داخل هاد القسم -->
-        <div class="photo-placeholder">صورتنا الأولى ♡</div>
-        <div class="photo-placeholder">صورتنا الثانية ♡</div>
-        <div class="photo-placeholder">ذكرى حلوة إلنا ♡</div>
+      <div class="memory-row">
+        <p class="memory-comment">هاي أطول مكالمة بيننا 🥹</p>
+        <img class="memory-photo" src="IMG_2042.jpeg" alt="أطول مكالمة بيننا">
       </div>
 
-      <div class="gift-section">
-        <span>🎬</span>
-        <h3>فيديو صغير إلك</h3>
-        <p>فيديو خاص إلك، منّي إلك 🤍</p>
-        <p>مكان الفيديو رح نضيفوه من بعد.</p>
+      <div class="memory-row reverse">
+        <img class="memory-photo" src="IMG_1871.png" alt="أول مكالمة حكيناها">
+        <p class="memory-comment">هاي أول مكالمة حكيناها 💗</p>
       </div>
 
-      <div class="gift-section">
-        <span>🎧</span>
-        <h3>أغانينا 🎶</h3>
-        <p>شغّل الأغاني وخد لحظة حلوة إلك.</p>
+      <div class="memory-row reverse">
+        <img class="memory-photo" src="IMG_3576.png" alt="ذكريات الشعر">
+        <p class="memory-comment">هاي تذكّر من كنت تحكيلي شعر يوم كنت تحب الأشعار 🎀</p>
+      </div>
 
+      <div class="memory-row reverse">
+        <img class="memory-photo" src="IMG_4110.png" alt="ذكرياتنا">
+        <p class="memory-comment">هاي تذكّر زمان من كنت جد تحبني وتراعي مشاعري وتحس فيني 💔</p>
+      </div>
+
+      <div class="video-section">
+        <h2>One more memory 🎞️</h2>
+        <video controls playsinline preload="metadata">
+          <source src="v14044g50000db8k667og65vvdnogbm0.mp4" type="video/mp4">
+          متصفحك ما قدر يشغّل الفيديو.
+        </video>
+      </div>
+
+      <div class="playlist-section">
+        <h2>you’ll know. ♡</h2>
+        <p>شوية أغاني بتذكّرني فينا 🎧</p>
         <iframe
           title="Our playlist"
-          src="https://open.spotify.com/embed/playlist/05jwwu3QxZQornR5tXYuWX?utm_source=generator"
+          src="https://open.spotify.com/embed/playlist/05jwwu3QxZQornR5tXYuWX"
           width="100%"
           height="352"
-          style="border:0; border-radius:16px;"
+          frameborder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy">
         </iframe>
       </div>
 
+      <button onclick="showPage('giftPage')">رجوع 💗</button>
     </div>
-
-    <button id="openLetterButton" class="main-button">
-      افتح رسالتي إلك 💌 <small>Open my letter</small>
-    </button>
-
-    <p class="gift-text">في شي أخير بدي قلك ياه... 💗</p>
   </div>
-</section>
 
-<!-- PAGE 5: Letter -->
-<section id="letterPage" class="page hidden">
-  <div class="gift-card">
-    <div class="gift-stickers">💌 ♡ 🦇</div>
+  <div id="poemChoicePage" class="page hidden">
+    <div class="card">
+      <h1>بتتوقع أحبك ولا لا؟ 🥹💗</h1>
+      <p>في شي بدي خليّك تقراه...</p>
+      <button onclick="showPage('poemPage')">اضغط هون ♡</button>
+      <button onclick="showPage('giftPage')">رجوع</button>
+    </div>
+  </div>
 
-    <p class="tiny">A little letter for you ♡</p>
-    <h2>إلك يا مراد 💗</h2>
+  <div id="poemPage" class="page hidden">
+    <div class="card poem-card">
+      <h1>ماذا أقول له؟ ♡</h1>
+      <div class="poem">
+        ماذا أقول له لو جاء يسألني<br>
+        إن كنت أكرهه أو كنت أهواه، ماذا أقول؟<br><br>
 
-    <p class="gift-english">A letter made just for you.</p>
+        إذا راحت أصابعه تلملم الليل عن شعري وترعاه<br>
+        وكيف أسمح أن يدنو بمقعده؟ وأن تنام على خصري ذراعاه<br><br>
 
-    <div class="gift-section">
-      <p class="gift-text">
-        مراد، بتمنّالك عيد ميلاد حلو قدّ قلبك،
-        وسنة مليانة فرح وراحة وأشياء بتحبّها.
-        بتمنّى تضلّ عندك أسباب كتيرة تضحك،
-        وتحقّق كل شي بتتمنّاه. 🤍🎂
+        غدًا إذا جاء أعطيه رسائله<br>
+        ونطعم النار أحلى ما كتبناه<br><br>
+
+        حبيبتي هل أنا حقًا حبيبته وهل أصدق بعد الهجر دعواه؟<br>
+        أما انتهت من سنين قصتي معه، ألم تمت كخيوط الشمس ذكراه؟
+      </div>
+      <button onclick="showPage('giftPage')">رجوع 💗</button>
+      <button onclick="showPage('lastChoicePage')">آخر شي إلك 🎁</button>
+    </div>
+  </div>
+
+  <div id="lastChoicePage" class="page hidden">
+    <div class="card">
+      <h1>آخر شي إلك 🎁💌</h1>
+      <p>باقي مفاجأة صغيرة...</p>
+      <button onclick="showPage('letterPage')">افتح آخر هدية ♡</button>
+      <button onclick="showPage('giftPage')">رجوع</button>
+    </div>
+  </div>
+
+  <div id="letterPage" class="page hidden">
+    <div class="card">
+      <h1>إلك يا مراد 💗</h1>
+      <p class="final-letter">
+        بما أنني مرح أكون هديتك لهاي السنة، سويتلك هالهدية مني 🎂💗
       </p>
+      <p>بتمنالك أيام حلوة وسنة مليانة فرح 🤍</p>
+      <button onclick="showPage('giftPage')">رجوع للبداية ♡</button>
     </div>
-
-    <button id="backToGiftButton" class="main-button">
-      ارجع للهدية 🎀 <small>Back to your gift</small>
-    </button>
   </div>
-</section>
 
-<script>
-const welcome = document.getElementById("welcome");
-const questionPage = document.getElementById("questionPage");
-const giftPage = document.getElementById("giftPage");
-const realGiftPage = document.getElementById("realGiftPage");
-const letterPage = document.getElementById("letterPage");
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.add('hidden');
+      });
 
-const openGift = document.getElementById("openGift");
-const yesButton = document.getElementById("yesButton");
-const noButton = document.getElementById("noButton");
-const noMessage = document.getElementById("noMessage");
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    }
 
-let noCount = 0;
+    function moveNoButton() {
+      const button = document.getElementById('noButton');
+      const message = document.getElementById('noMessage');
+      const messages = [
+        'ليش؟ 🥺',
+        'بدك تبكّيني؟ 😭',
+        'ليش عم تحاول تزعلني؟ 😭💔',
+        'خلص... ما ضل قدامك غير إيه 😭💗'
+      ];
 
-function showPage(pageToShow) {
-  [welcome, questionPage, giftPage, realGiftPage, letterPage].forEach(page => {
-    page.classList.add("hidden");
-  });
+      message.textContent = messages[Math.floor(Math.random() * messages.length)];
 
-  noButton.style.position = "";
-  noButton.style.left = "";
-  noButton.style.top = "";
-  noButton.style.display = "";
-  noMessage.textContent = "";
-
-  pageToShow.classList.remove("hidden");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-openGift.addEventListener("click", function () {
-  showPage(questionPage);
-});
-
-noButton.addEventListener("click", function () {
-  noCount++;
-
-  if (noCount === 1) {
-    noMessage.textContent = "ليش؟ 🥺";
-  } else if (noCount === 2) {
-    noMessage.textContent = "بدّك تبكّيني؟ 😭";
-  } else if (noCount === 3) {
-    noMessage.textContent = "ليش عم تحاول تزعلني؟ 😭💔";
-  }
-
-  if (noCount < 3) {
-    noButton.style.position = "fixed";
-
-    const maxX = Math.max(20, window.innerWidth - noButton.offsetWidth - 20);
-    const maxY = Math.max(20, window.innerHeight - noButton.offsetHeight - 20);
-
-    noButton.style.left = Math.max(20, Math.random() * maxX) + "px";
-    noButton.style.top = Math.max(20, Math.random() * maxY) + "px";
-  } else {
-    noButton.style.display = "none";
-    noMessage.textContent = "خلص... ما ضل قدامك غير إيه 😭💗";
-  }
-});
-
-yesButton.addEventListener("click", function () {
-  showPage(giftPage);
-});
-
-document.getElementById("continueButton").addEventListener("click", function () {
-  showPage(realGiftPage);
-});
-
-document.getElementById("openLetterButton").addEventListener("click", function () {
-  showPage(letterPage);
-});
-
-document.getElementById("backToGiftButton").addEventListener("click", function () {
-  showPage(realGiftPage);
-});
-</script>
+      button.style.position = 'relative';
+      button.style.left = (Math.random() * 100 - 50) + 'px';
+      button.style.top = (Math.random() * 60 - 30) + 'px';
+    }
+  </script>
 
 </body>
 </html>
-
 
